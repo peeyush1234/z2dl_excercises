@@ -8,6 +8,7 @@ from keras.layers import Dense
 from keras.utils import to_categorical
 from keras.optimizers import SGD, Adam, Adagrad, RMSprop
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+import keras.backend as K
 
 df = pd.read_csv("../data/wines.csv")
 target_names = df['Class'].unique()
@@ -23,6 +24,7 @@ mms = MinMaxScaler()
 for col in X.columns:
     X[col] = ss.fit_transform(X[[col]])
 
+K.clear_session()
 model = Sequential()
 model.add(Dense(8, input_dim=13, activation='tanh', kernel_initializer='glorot_normal'))
 model.add(Dense(5, activation='tanh'))
