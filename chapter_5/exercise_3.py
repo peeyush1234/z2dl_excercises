@@ -10,6 +10,7 @@ from keras.optimizers import SGD, Adam, Adagrad, RMSprop
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from keras.layers import Input, Dense
 from keras.models import Model
+import keras.backend as K
 
 K.clear_session()
 df = pd.read_csv("../data/wines.csv")
