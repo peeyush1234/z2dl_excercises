@@ -11,6 +11,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from keras.layers import Input, Dense
 from keras.models import Model
 from keras.callbacks import EarlyStopping, TensorBoard, ModelCheckpoint
+import keras.backend as K
 
 K.clear_session()
 df = pd.read_csv("../data/wines.csv")
